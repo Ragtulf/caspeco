@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 
 export const Exchange = () => {
   const [rateInfo, setRateInfo] = useState('')
@@ -6,32 +7,19 @@ export const Exchange = () => {
   const API_KEY = process.env.REACT_APP_API_KEY
   const RATE_URL = `http://data.fixer.io/api/latest?access_key=${API_KEY}&symbols=SEK`
 
-
-  // const FetchNewData = () => {
-  //   useEffect(() => {
-  //     fetch(RATE_URL)
-  //       .then(res => res.json())
-  //       .then(json => {
-  //         console.log('Exchange rate', json)
-  //         setRateInfo(json)
-  //       })
-  //   }, [])
-  // }
-
-  // FetchNewData()
-
-  useEffect(() => {
-    const fetchNewData = () => {
-      fetch(RATE_URL)
+   /* SINCE I'M NOT ON A SUBSCRIPTION PLAN WITH FIXER.IO
+    I ONLY GET HOURLY UPDATES ON THE RATES */
+  const fetchNewData = () => {
+    fetch(RATE_URL)
       .then(res => res.json())
       .then(json => {
         console.log('Exchange rate', json)
         setRateInfo(json)
       })
-    }  
+  }
 
-    fetchNewData()
-  }, [])
+  useEffect(() => fetchNewData(), [])
+
 
   // DATE AND TIME OF FETCH
   const timestamp = rateInfo.timestamp
@@ -40,13 +28,23 @@ export const Exchange = () => {
 
 
   return (
-    <div>
-      <h3>SEK ➡️ EUR</h3>
+    <WidgetDiv>
+      <Heading>SEK ➡️ EUR</Heading>
       {rateInfo && <h4>{rateInfo.rates.SEK}</h4>}
       {printTime && <h5>{printTime}</h5>}
-      <button onClick={() => FetchNewData()}>
+      <button onClick={() => fetchNewData()}>
         Update
       </button>
-    </div>
+    </WidgetDiv>
   )
 }
+
+const WidgetDiv = styled.div`
+  background: rgba(255, 255, 255, 0.5);
+  border: 3.5px solid black;
+`
+
+const Heading = styled.h3`
+  font-size: 1.8em;
+  margin: 10px;
+`
