@@ -1,6 +1,6 @@
 import React from 'react'
 // import styled from 'styled-components/macro'
-import { Exchange } from './lib/exchange'
+import { Exchange } from './components/exchange'
 
 export const App = () => {
   return (

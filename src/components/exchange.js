@@ -24,27 +24,47 @@ export const Exchange = () => {
   // DATE AND TIME OF FETCH
   const timestamp = rateInfo.timestamp
   let dateObject = new Date(timestamp * 1000)
-  let printTime = dateObject.toLocaleString('en-GB')
+  let printDate = dateObject.toLocaleDateString('en-GB')
 
 
   return (
     <WidgetDiv>
       <Heading>SEK ➡️ EUR</Heading>
-      {rateInfo && <h4>{rateInfo.rates.SEK}</h4>}
-      {printTime && <h5>{printTime}</h5>}
-      <button onClick={() => fetchNewData()}>
+      {rateInfo && <RateText>{rateInfo.rates.SEK}</RateText>}
+      {printDate && <DateText>{printDate}</DateText>}
+      <UpdateButton onClick={() => fetchNewData()}>
         Update
-      </button>
+      </UpdateButton>
     </WidgetDiv>
   )
 }
 
 const WidgetDiv = styled.div`
   background: rgba(255, 255, 255, 0.5);
-  border: 3.5px solid black;
+  border: 4px solid black;
 `
 
 const Heading = styled.h3`
-  font-size: 1.8em;
+  font-size: 2em;
   margin: 10px;
+`
+
+const RateText = styled.h4`
+  font-size: 1.8em;
+  margin: 10px 10px;
+`
+
+const DateText = styled.h5`
+  font-size: 0.7em;
+  margin: 5px 10px;
+`
+
+const UpdateButton = styled.button`
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin: 10px;
+  padding: 8px;
+  border: none;
+  color: #fff;
+  background: #8226de;
 `
