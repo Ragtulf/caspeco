@@ -9,8 +9,8 @@ export const Exchange = () => {
 
   const RATE_URL = 'https://api.exchangeratesapi.io/latest?symbols=SEK'
 
-   /* SINCE I'M NOT ON A SUBSCRIPTION PLAN WITH FIXER.IO
-    I ONLY GET HOURLY UPDATES ON THE RATES */
+  /* SINCE I'M NOT ON A SUBSCRIPTION PLAN WITH FIXER.IO
+   I ONLY GET HOURLY UPDATES ON THE RATES */
   const fetchNewData = () => {
     fetch(RATE_URL)
       .then(res => res.json())
@@ -42,6 +42,7 @@ export const Exchange = () => {
 }
 
 const WidgetDiv = styled.div`
+  margin: 10px;
   background: rgba(255, 255, 255, 0.5);
   border: 4px solid black;
 `
