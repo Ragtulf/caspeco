@@ -10,7 +10,7 @@ export const memoList = createSlice({
   },
   reducers: {
     // Add a new memo
-    addMemo: (state, action) => {
+    addMemoNote: (state, action) => {
       state.memos.push({
         id: state.memos.length +1,
         text: action.payload

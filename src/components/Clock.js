@@ -9,7 +9,7 @@ export const ClockWidget = () => {
     <WidgetDiv>
       <Time>
         <Clock
-          format={'HH:mm'}
+          format={'HH:mm:ss'}
           ticking={true}
           timeZone={'Europe/Stockholm'} />
       </Time>
