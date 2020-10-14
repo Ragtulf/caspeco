@@ -4,8 +4,10 @@ import styled from 'styled-components'
 export const Exchange = () => {
   const [rateInfo, setRateInfo] = useState('')
 
-  const API_KEY = process.env.REACT_APP_API_KEY
-  const RATE_URL = `http://data.fixer.io/api/latest?access_key=${API_KEY}&symbols=SEK`
+  // const API_KEY = process.env.REACT_APP_API_KEY
+  // const RATE_URL = `http://data.fixer.io/api/latest?access_key=${API_KEY}&symbols=SEK`
+
+  const RATE_URL = 'https://api.exchangeratesapi.io/latest?symbols=SEK'
 
    /* SINCE I'M NOT ON A SUBSCRIPTION PLAN WITH FIXER.IO
     I ONLY GET HOURLY UPDATES ON THE RATES */
@@ -22,16 +24,16 @@ export const Exchange = () => {
 
 
   // DATE AND TIME OF FETCH
-  const timestamp = rateInfo.timestamp
-  let dateObject = new Date(timestamp * 1000)
-  let printDate = dateObject.toLocaleDateString('en-GB')
+  // const timestamp = rateInfo.timestamp
+  // let dateObject = new Date(timestamp * 1000)
+  // let printDate = dateObject.toLocaleDateString('en-GB')
 
 
   return (
     <WidgetDiv>
       <Heading>SEK ➡️ EUR</Heading>
       {rateInfo && <RateText>{rateInfo.rates.SEK}</RateText>}
-      {printDate && <DateText>{printDate}</DateText>}
+      {rateInfo && <DateText>{rateInfo.date}</DateText>}
       <UpdateButton onClick={() => fetchNewData()}>
         Update
       </UpdateButton>
