@@ -9,12 +9,14 @@ export const memoList = createSlice({
     ],
   },
   reducers: {
+    // Add a new memo
     addMemo: (state, action) => {
       state.memos.push({
         id: state.memos.length +1,
         text: action.payload
       })
     },
+    // Remove memo
     removeMemo: (state, action) => {
       state.memos = state.memos.filter((memo) => memo.id !== action.payload)
     }
