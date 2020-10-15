@@ -31,4 +31,5 @@ const GIF = styled.img`
   width: 500px;
   height: auto;
   object-fit: cover;
+  margin: 10px;
 `
