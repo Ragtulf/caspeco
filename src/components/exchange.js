@@ -29,7 +29,7 @@ export const Exchange = () => {
 
   return (
     <WidgetDiv>
-      <Heading>SEK ➡️ EUR</Heading>
+      <Heading>SEK <Arrow src='/arrow.svg' alt='arrow to the right' /> EUR</Heading>
       {rateInfo && <RateText>{rateInfo.rates.SEK}</RateText>}
       {printDate && <DateText>{printDate}</DateText>}
       <UpdateButton onClick={() => fetchNewData()}>
@@ -46,12 +46,16 @@ const WidgetDiv = styled.div`
 `
 
 const Heading = styled.h3`
-  font-size: 2em;
+  font-size: 3em;
   margin: 10px;
 `
 
+const Arrow = styled.img`
+  width: 30px;
+`
+
 const RateText = styled.h4`
-  font-size: 1.8em;
+  font-size: 2.5em;
   margin: 10px 10px;
 `
 

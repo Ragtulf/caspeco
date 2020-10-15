@@ -15,7 +15,9 @@ export const Memo = ({ id, text}) => {
   return (
     <MemoNote>
       <MemoText>{text}</MemoText>
-      <XButton onClick={handleRemove}>x</XButton>
+      <XButton onClick={handleRemove}>
+        <XIcon src='/X.svg' alt='delete memo' />
+      </XButton>
     </MemoNote>
   )
 }
@@ -33,11 +35,16 @@ const MemoText = styled.p`
 `
 
 const XButton = styled.button`
+  background-color: #ffa6da;
   border: none;
   margin: 5px;
-  width: 30px;
-  height: 30px;
-  color: #fff;
+  width: none;
+  height: none;
+`
+
+const XIcon = styled.img`
+  width: 10px;
+  padding: 5px;
   background-color: #fc49b2;
 
   &:hover {
