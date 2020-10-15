@@ -26,7 +26,7 @@ export const Exchange = () => {
   }
   const printDate = (newDateFormat(date))
 
-  
+
   return (
     <WidgetDiv>
       <Heading>SEK ➡️ EUR</Heading>
@@ -68,4 +68,8 @@ const UpdateButton = styled.button`
   border: none;
   color: #fff;
   background: #8226de;
+
+  &:hover {
+    background-color: #fca103;
+  }
 `

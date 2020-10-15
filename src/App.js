@@ -4,7 +4,7 @@ import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import { Exchange } from './components/Exchange'
 import { ClockWidget } from './components/Clock'
-import { Memos } from './components/Memos'
+import { Memos } from './components/Memo/Memos'
 import { memoList } from 'reducers/memoList'
 
 const reducer = combineReducers({

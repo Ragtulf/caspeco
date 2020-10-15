@@ -43,7 +43,7 @@ const MemoNote = styled.div`
   justify-content: center;
 
   &:hover {
-    background-color: orange;
+    background-color: #fca103;
   }
 `
 const StyledInput = styled.input`
@@ -75,4 +75,8 @@ const AddButton = styled.button`
   border: none;
   color: #fff;
   background: #8226de;
+
+  &:hover {
+    background-color: #fca103;
+  }
 `

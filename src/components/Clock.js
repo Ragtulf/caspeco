@@ -2,19 +2,26 @@ import React from 'react'
 // import Moment from 'moment'
 import 'moment-timezone'
 import Clock from 'react-live-clock'
+import FitText from '@kennethormandy/react-fittext'
 import styled from 'styled-components/macro'
 
 export const ClockWidget = () => {
   return (
     <WidgetDiv>
-      <Time>
-        <Clock
-          format={'HH:mm'}
-          ticking={true}
-          timeZone={'Europe/Stockholm'} />
-      </Time>
+      <FitText
+        maxFontSize={60}
+        compressor={1.7}>
+        <>
+          <Time>
+            <Clock
+              format={'HH:mm'}
+              ticking={true}
+              timeZone={'Europe/Stockholm'} />
+          </Time> 
+        </>
+      </FitText>
     </WidgetDiv>
-  )
+  ) 
 }
 
 const WidgetDiv = styled.div`
