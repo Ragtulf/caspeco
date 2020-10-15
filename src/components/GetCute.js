@@ -5,8 +5,13 @@ import { Giphy } from './Giphy'
 export const GetCute = () => {
   const [buttonPushed, setButtonPushed] = useState(false)
 
+  const handleGetCute = () => {
+    set
+  }
+
   return (
     <WidgetDiv>
+      {!buttonPushed && <h2>Do you need some cute in your life?</h2>}
       {buttonPushed && <Giphy />}
       <CuteButton
         onClick={setButtonPushed}>

@@ -14,8 +14,6 @@ export const Giphy = () => {
     })
       .then(res => res.json())
       .then(json => {
-        console.log('GIF', json.data)
-        console.log('api', apiKey)
         setGif(json.data)
       })
   }, [])
