@@ -5,6 +5,7 @@ import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { Exchange } from './components/exchange'
 import { ClockWidget } from './components/Clock'
 import { Memos } from './components/Memo/Memos'
+import { GetCute } from './components/GetCute'
 import { memoList } from 'reducers/memoList'
 
 const reducer = combineReducers({
@@ -26,6 +27,7 @@ export const App = () => {
       <Exchange />
       <ClockWidget />
       <Memos />
+      <GetCute />
     </Provider>
   )
 }
