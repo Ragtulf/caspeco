@@ -2,9 +2,9 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 
-import { Exchange } from './components/Exchange'
+import { Exchange } from './components/exchange'
 import { ClockWidget } from './components/Clock'
-import { Memos } from './components/Memos'
+import { Memos } from './components/memos'
 import { memoList } from 'reducers/memoList'
 
 const reducer = combineReducers({
