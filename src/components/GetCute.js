@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { Giphy } from './Giphy'
 
 export const GetCute = () => {
-  const [buttonPushed, setButtonPushed] = useState(false)
+  const [buttonPushCount, setButtonPushCount] = useState(0)
 
-  const handleGetCute = () => {
-    set
+  const handleButtonPush = () => {
+    setButtonPushCount(buttonPushCount + 1)
   }
+
 
   return (
     <WidgetDiv>
-      {!buttonPushed && <h2>Do you need some cute in your life?</h2>}
-      {buttonPushed && <Giphy />}
+      {!buttonPushCount && <h2>Do you need some cute in your life?</h2>}
+       {buttonPushCount > 0 && <Giphy key={buttonPushCount} />}
       <CuteButton
-        onClick={setButtonPushed}>
+        onClick={() => {handleButtonPush()}}>
           Get Cute!
       </CuteButton>
     </WidgetDiv>
@@ -41,3 +42,36 @@ const CuteButton = styled.button`
     background-color: #fca103;
   }
 `
+
+const ReCuteButton = styled.button`
+  width: 150px;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  margin: 10px;
+  padding: 8px;
+  border: none;
+  color: #fff;
+  background: #8226de;
+
+  &:hover {
+    background-color: #fca103;
+  }
+`
+
+ {/* {buttonPushed && <ReCuteButton
+        onClick={getMoreCute}>
+          Get more Cute!
+      </ReCuteButton>} */}
+
+  // const handleGetCute = (event) => {
+  //   // event.preventDefault()
+
+  //   setButtonPushed(true)
+  //   toggle()
+  // }
+
+  // const getMoreCute = (event) => {
+  //   event.preventDefault()
+
+  //   setButtonRePushed(true)
+  // }

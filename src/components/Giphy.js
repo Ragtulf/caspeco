@@ -5,17 +5,15 @@ import styled from 'styled-components/macro'
 const apiKey = process.env.REACT_APP_API_KEY
 const giphyURL = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=cute&rating=g`
 
-export const Giphy = () => {
+export const Giphy = ( ) => {
   const [gif, setGif] = useState([])
 
   useEffect(() => {
-    fetch(giphyURL, {
-      method: 'GET'
+    fetch(giphyURL)
+    .then(res => res.json())
+    .then(json => {
+      setGif(json.data)
     })
-      .then(res => res.json())
-      .then(json => {
-        setGif(json.data)
-      })
   }, [])
 
   return (

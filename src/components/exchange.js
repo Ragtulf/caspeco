@@ -11,7 +11,6 @@ export const Exchange = () => {
     fetch(RATE_URL)
       .then(res => res.json())
       .then(json => {
-        console.log('Exchange rate', json)
         setRateInfo(json)
         setDate(json.date)
       })
