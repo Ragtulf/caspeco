@@ -1,19 +1,31 @@
-# Technigo React Starter App
+# Ragna + Caspeco = ✨
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+This is a tech test where I made a dashboard with four widgets.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+- A clock
+- An exchange widget that shows the rate for SEK ➡️ EUR
+- A memo widget that saves memos to localStorage
+- A widget that shows a cute GIF from Giphy's API on the click of a button
 
-## Usage
+## Tech
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+- React.js
+- JSX
+- Redux
+- Reusable components
+- Styled-Components
+- Figma
 
-Alternatively, if you don't want a new git repo on your account;
+## How I did it
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+I planned the first three widgets first but had an idea that I wanted to add the fourth one. I did a rough sketch with pen and paper before I started coding. I began with focusing on getting the logic done for one widget at a time. I styled them a little bit along the way because I had an idea of how they should look from the beginning. I chose to finish all logic before working on the layout and responsiveness.
+I used Styled-Components to style and media queries to make the website responsive. The button is a reuseable component. I used Figma to draw two icons, the arrow in the exchange widget and the x in the memo widget. 
+
+I did spend a lot of time on how to make the button fetch again to the API. 
+There was a problem deploying the website to Netlify when using fixer.io's API. So I chose to change to exchangeratesapi.io. The downside is that it doesn't have a timestamp for the rates, only a date. 
+
+
+## View it live
+
+The dashboard can be viewed here👀⏰🐯: 
+https://o-food-community.netlify.app/
