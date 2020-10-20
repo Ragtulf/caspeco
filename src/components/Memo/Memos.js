@@ -17,4 +17,8 @@ const WidgetDiv = styled.div`
   margin: 10px;
   background: rgba(255, 255, 255, 0.5);
   border: 4px solid black;
+
+  @media (min-width: 500px) {
+    width: 50%;
+  }
 `

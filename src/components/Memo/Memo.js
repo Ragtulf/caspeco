@@ -28,10 +28,18 @@ const MemoNote = styled.div`
   margin: 10px;
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 500px) {
+    padding: 10px;
+  }
 `
 
 const MemoText = styled.p`
   font-size: 1.3em;
+
+  @media (min-width: 500px) {
+    font-size: 1em;
+  }
 `
 
 const XButton = styled.button`
@@ -49,5 +57,10 @@ const XIcon = styled.img`
 
   &:hover {
     background-color: #e3148e;
+  }
+
+  @media (min-width: 500px) {
+    width: 6px;
+    padding: 3px;
   }
 `

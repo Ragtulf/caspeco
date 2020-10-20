@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 import styled from 'styled-components/macro'
 
-import { Exchange } from './components/Exchange'
+import { Exchange } from './components/exchange'
 import { ClockWidget } from './components/Clock'
 import { Memos } from './components/Memo/Memos'
 import { GetCute } from './components/GetCute'
@@ -24,16 +24,40 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <Headline>Hello Caspeco! <span role="img" aria-label="stars">✨</span></Headline>
-      <ClockWidget />
-      <Exchange />
-      <Memos />
-      <GetCute />
+      <FlexDiv>
+        <Headline>Hello Caspeco! <span role="img" aria-label="stars">✨</span></Headline>
+        <ClockWidget />
+        <ExchangeAndMemosDiv>
+          <Exchange />
+          <Memos />
+        </ExchangeAndMemosDiv>
+        <GetCute />
+      </FlexDiv>
     </Provider>
   )
 }
 
+const FlexDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1000px) {
+    width: 800px;
+  }
+`
+
 const Headline = styled.h1`
   font-size: 2.5em;
   text-align: center;
+
+  @media (min-width: 500px) {
+    font-size: 3em;
+  }
+`
+
+const ExchangeAndMemosDiv = styled.div`
+  @media (min-width: 500px) {
+    display: flex;
+    justify-content: space-between;
+  }
 `

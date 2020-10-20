@@ -27,4 +27,8 @@ const GIF = styled.img`
   width: 330px;
   height: auto;
   margin: 10px;
+
+  @media (min-width: 700px) {
+    width: 500px;
+  }
 `

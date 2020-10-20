@@ -23,7 +23,7 @@ export const AddMemo = () => {
             type='input'
             onChange={event => setInputValue(event.target.value)}
             value={inputValue}
-            placeholder='Type your memo here!' />
+            placeholder='Type your memo!' />
         </MemoNote>
         <AddButton
           type='submit'
@@ -45,6 +45,10 @@ const MemoNote = styled.div`
   &:hover {
     background-color: #fca103;
   }
+
+  @media (min-width: 500px) {
+    padding: 20px;
+  }
 `
 const StyledInput = styled.input`
   font-family: 'Karla', sans-serif;
@@ -58,6 +62,10 @@ const StyledInput = styled.input`
   &::placeholder {
     font-family: 'Karla', sans-serif;
     color: #fff;
+  }
+
+  @media (min-width: 500px) {
+    font-size: 1.2em;
   }
 `
 
@@ -79,5 +87,9 @@ const AddButton = styled.button`
 
   &:hover {
     background-color: #fca103;
+  }
+
+  &:focus {
+    outline: 3px solid #5b02b5;
   }
 `

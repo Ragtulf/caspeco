@@ -49,4 +49,8 @@ const CuteButton = styled.button`
   &:hover {
     background-color: #fca103;
   }
+
+  &:focus {
+    outline: 3px solid #5b02b5;
+  }
 `
