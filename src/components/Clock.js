@@ -4,6 +4,9 @@ import Clock from 'react-live-clock'
 import FitText from '@kennethormandy/react-fittext'
 import styled from 'styled-components/macro'
 
+//FitText is a responsive text component
+//Shows a clock from an external library
+
 export const ClockWidget = () => {
   return (
     <WidgetDiv>

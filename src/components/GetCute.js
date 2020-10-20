@@ -2,9 +2,14 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { Giphy } from './Giphy'
 
+//Allows user to fetch GIF when pushing a button
+/*Conditionally renders the headline and GIF 
+  depending on if the button has been clicked*/
+
 export const GetCute = () => {
   const [buttonPushCount, setButtonPushCount] = useState(0)
 
+  //counts how often the button is pushed
   const handleButtonPush = () => {
     setButtonPushCount(buttonPushCount + 1)
   }

@@ -3,10 +3,13 @@ import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux'
 import { memoList } from 'reducers/memoList'
 
+//Form to add a memo
+
 export const AddMemo = () => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
 
+  //Sends memo text to Redux and resets the input
   const handleAddMemo = event => {
     event.preventDefault()
 

@@ -4,6 +4,8 @@ import styled from 'styled-components/macro'
 import { ListedMemos } from './ListedMemos'
 import { AddMemo } from './AddMemo'
 
+//Shows exsisting memos and a form to add a memo
+
 export const Memos = () => {
   return (
     <WidgetDiv>

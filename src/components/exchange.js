@@ -7,6 +7,7 @@ export const Exchange = () => {
 
   const RATE_URL = 'https://api.exchangeratesapi.io/latest?symbols=SEK'
 
+  // Fetch the exchange rate data to the API
   const fetchNewData = () => {
     fetch(RATE_URL)
       .then(res => res.json())
@@ -17,9 +18,11 @@ export const Exchange = () => {
       })
   }
 
+  /* Runs the fetchNewData function once when page is loaded
+    and then every time the button is clicked */
   useEffect(() => fetchNewData(), [])
 
-  // This function fixes the format on date
+  // Fixes the format on date
   const newDateFormat = date => {
     const [yy, mm, dd] = date.split(/-/g)
     return `${dd}/${mm}/${yy}`

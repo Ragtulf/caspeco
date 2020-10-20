@@ -8,6 +8,7 @@ const giphyURL = `https://api.giphy.com/v1/gifs/random?api_key=${apiKey}&tag=kit
 export const Giphy = ( ) => {
   const [gif, setGif] = useState([])
 
+  //Fetch a random GIF of a kitten to the Giphy API
   useEffect(() => {
     fetch(giphyURL)
     .then(res => res.json())

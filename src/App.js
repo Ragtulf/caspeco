@@ -9,6 +9,7 @@ import { Memos } from './components/Memo/Memos'
 import { GetCute } from './components/GetCute'
 import { memoList } from 'reducers/memoList'
 
+// Redux & LocalStorage
 const reducer = combineReducers({
   memoList: memoList.reducer
 })
@@ -20,6 +21,7 @@ const store = createStore(reducer, persistedState)
 store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()))
 })
+//
 
 export const App = () => {
   return (
