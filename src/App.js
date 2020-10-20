@@ -1,8 +1,9 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
+import styled from 'styled-components/macro'
 
-import { Exchange } from './components/exchange'
+import { Exchange } from './components/Exchange'
 import { ClockWidget } from './components/Clock'
 import { Memos } from './components/Memo/Memos'
 import { GetCute } from './components/GetCute'
@@ -23,11 +24,16 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <h1>Hello Caspeco!</h1>
-      <Exchange />
+      <Headline>Hello Caspeco! <span role="img" aria-label="stars">✨</span></Headline>
       <ClockWidget />
+      <Exchange />
       <Memos />
       <GetCute />
     </Provider>
   )
 }
+
+const Headline = styled.h1`
+  font-size: 2.5em;
+  text-align: center;
+`
