@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { Giphy } from './Giphy'
+import { Button } from 'lib/Button'
 
 //Allows user to fetch GIF when pushing a button
 /*Conditionally renders the headline and GIF 
@@ -18,10 +19,9 @@ export const GetCute = () => {
     <WidgetDiv>
       {!buttonPushCount && <Headline>Do you need some cute in your life?</Headline>}
        {buttonPushCount > 0 && <Giphy key={buttonPushCount} />}
-      <CuteButton
-        onClick={() => {handleButtonPush()}}>
-          Get Cute!
-      </CuteButton>
+      <Button
+        buttonName='Get cute!'
+        onClickFunction={() => {handleButtonPush()}} />
     </WidgetDiv>
   )
 }
@@ -40,22 +40,22 @@ const Headline = styled.h2`
   text-align: center;
 `
 
-const CuteButton = styled.button`
-  width: 150px;
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  margin: 10px 10px 20px 10px;
-  padding: 8px;
-  border: none;
-  align-self: center;
-  color: #fff;
-  background: #8226de;
+// const CuteButton = styled.button`
+//   width: 150px;
+//   font-family: 'Karla', sans-serif;
+//   font-weight: 700;
+//   margin: 10px 10px 20px 10px;
+//   padding: 8px;
+//   border: none;
+//   align-self: center;
+//   color: #fff;
+//   background: #8226de;
 
-  &:hover {
-    background-color: #fca103;
-  }
+//   &:hover {
+//     background-color: #fca103;
+//   }
 
-  &:focus {
-    outline: 3px solid #5b02b5;
-  }
-`
+//   &:focus {
+//     outline: 3px solid #5b02b5;
+//   }
+// `

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux'
 import { memoList } from 'reducers/memoList'
+import { Button } from 'lib/Button'
 
 //Form to add a memo
 
@@ -28,11 +29,10 @@ export const AddMemo = () => {
             value={inputValue}
             placeholder='Type your memo!' />
         </MemoNote>
-        <AddButton
-          type='submit'
-          value='Add memo'
-          disabled={!inputValue}
-        >Add memo</AddButton>
+        <Button
+          buttonType='submit'
+          buttonName='Add memo'
+          isDisabled={!inputValue} />
       </StyledForm>
     </div>
   )
@@ -77,22 +77,22 @@ const StyledForm = styled.form`
   flex-direction: column;
 `
 
-const AddButton = styled.button`
-  width: 150px;
-  font-family: 'Karla', sans-serif;
-  font-weight: 700;
-  margin: 10px 10px 20px 10px;
-  padding: 8px;
-  border: none;
-  align-self: center;
-  color: #fff;
-  background: #8226de;
+// const AddButton = styled.button`
+//   width: 150px;
+//   font-family: 'Karla', sans-serif;
+//   font-weight: 700;
+//   margin: 10px 10px 20px 10px;
+//   padding: 8px;
+//   border: none;
+//   align-self: center;
+//   color: #fff;
+//   background: #8226de;
 
-  &:hover {
-    background-color: #fca103;
-  }
+//   &:hover {
+//     background-color: #fca103;
+//   }
 
-  &:focus {
-    outline: 3px solid #5b02b5;
-  }
-`
+//   &:focus {
+//     outline: 3px solid #5b02b5;
+//   }
+// `

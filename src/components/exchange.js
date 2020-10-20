@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
+import { Button } from 'lib/Button'
 
 export const Exchange = () => {
   const [rateInfo, setRateInfo] = useState('')
@@ -38,9 +39,9 @@ export const Exchange = () => {
           {rateInfo && <RateText>{rateInfo.rates.SEK}</RateText>}
           {printDate && <DateText>{printDate}</DateText>}
         </FlexDiv>
-        <UpdateButton onClick={() => fetchNewData()}>
-          Update
-        </UpdateButton>
+        <Button
+          onClickFunction={() => fetchNewData()}
+          buttonName='Update' />
       </ContentDiv>
     </WidgetDiv>
   )
